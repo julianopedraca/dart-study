@@ -42,4 +42,28 @@ void main() {
 
   print(myFuncWithDefaultValue('juba'));
   print(myFuncWithDefaultValue('juba', name2: 'friend'));
+
+  myNamedFuncWithRequired(String name, nickname, {required int age}) {
+    return "name: $name  age: $age  nickname: $nickname";
+  }
+
+  //if we dont set age it will cause an error
+  print(myNamedFuncWithRequired('juba', 'juju', age: 28));
+
+  printElement(int element) {
+    print(element);
+  }
+
+  List<int> list = [1, 2, 3];
+
+// Pass printElement as a parameter.
+  list.forEach(printElement);
+
+  //anonimous function
+  const List<String> fruitList = ['apples', 'bananas', 'oranges'];
+  fruitList.map((item) {
+    return item.toUpperCase();
+  }).forEach((item) {
+    print('$item: ${item.length}');
+  });
 }
