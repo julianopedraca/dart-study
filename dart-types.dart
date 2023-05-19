@@ -9,6 +9,8 @@
 
 import 'dart:collection';
 
+enum Color { red, green, blue }
+
 void main() {
   // Number data types
   int num1 = 1;
@@ -330,7 +332,8 @@ void main() {
   //enum
   //Enumerated types, often called enumerations or enums, are a special kind of
   //class used to represent a fixed number of constant values.
-  
-  enum Color { red, green, blue };
- 
+
+  final color = Color.green;
+
+  print(color);
 }
