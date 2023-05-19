@@ -7,6 +7,8 @@
  Maps map 
 */
 
+import 'dart:collection';
+
 void main() {
   // Number data types
   int num1 = 1;
@@ -214,4 +216,121 @@ void main() {
   print(set_variable_name);
   List<String> list_variable_name = set_variable_name.toList();
   print(list_variable_name);
+
+  //Maps data types
+  /*
+  In Dart programming, Maps are dictionary-like data types that exist in
+  key-value form (known as lock-key). There is no restriction on the type of
+  data that goes in a map data type. Maps are very flexible and can mutate their
+  size based on the requirements. However, it is important to note that all
+  locks (keys) need to be unique inside a map data type.
+  */
+
+  //We can declare Map in two ways: Using Map Literals and using Map Constructors
+
+  //Using Map Lietral
+
+  /*
+  Creating the Map using Map Literals
+  var map_name = { key1 : value1, key2 : value2, ..., key n : value n }
+  */
+
+  var mapLiterals = {'key1': 10, 'key2': 20, 'key3': 30};
+
+  print(mapLiterals['key1']); //should print 10
+  print(mapLiterals[0]); //should print null
+
+  //inserting a new value in Map
+  mapLiterals['key0'] = 0;
+
+  print(mapLiterals);
+
+  //using Map constructor
+
+  /*
+  // Creating the Map using Map Constructor
+  var map_name = new Map();
+  // Assigning value and key inside Map
+  map_name [ key ] = value;
+  */
+
+  var constructorMap = new Map();
+
+  // inserting values into Map
+  constructorMap[0] = 'dart';
+  constructorMap[1] = 'programing';
+  constructorMap[2] = 'mobile';
+
+  print(constructorMap);
+
+  //queue data type
+  //A queue is a FIFO (First In First Out) data structure where the element that
+  //is added first will be deleted first
+
+  /*
+  // With type notation(E)
+  Queue<E> variable_name = new Queue<E>.from(list_name);
+  
+  // Without type notation
+  var variable_name = new Queue.from(list_name);
+  */
+
+  //It must be noted that to use a queue in a dart program you have to import
+  //‘dart:collection’ module
+
+  Queue<String> sampleQueue = new Queue<String>();
+
+  sampleQueue.add('hello');
+  sampleQueue.add('world!');
+
+  print(sampleQueue);
+
+  //transform list to queue
+
+  List<String> sampleList = ["value1", "value2", "value3"];
+
+  Queue<String> listToQueue = new Queue<String>.from(sampleList);
+
+  print(listToQueue);
+
+  /*
+  1. queue_name.add(element)	Adds the element inside the queue from the front.
+  2. queue_name.addAll(collection_name)	Adds all the element present in the
+  collection_name (generally List).
+  3. queue_name.addFirst(element)	Adds the element from front inside the queue.
+  4. queue_name.addLast(element)	Adds the element from back in the queue.
+  5. queue_name.clear()	Removes all the elements from the queue.
+  6. queue_name.first()	Returns the first element from the queue.
+  7. queue_name.forEach(f(element))	Returns all the element present in the queue.
+  8. queue_name.isEmpty	Returns boolean true if the queue is empty else return false.
+  9. queue_name.length	Returns the length of the queue.
+  10. queue_name.removeFirst()	Removes the first element from the queue.
+  11. queue_name.removeLast()	Removes the last element from the queue.
+  */
+
+  //Records
+  //*records require a language version of at leat 3.0
+  /*
+  Records are an anonymous, immutable, aggregate type. Like other collection
+  types, they let you bundle multiple objects into a single object. Unlike other
+  collection types, records are fixed-sized, heterogeneous, and typed.
+
+  Records are real values; you can store them in variables, nest them, pass them
+  to and from functions, and store them in data structures such as lists, maps,
+  and sets.
+  */
+
+  var record = ('first', a: 2, b: true, 'last');
+
+  print(record.$1); // Prints 'first'
+  print(record.a); // Prints 2
+  print(record.b); // Prints true
+  print(record.$2); // Prints 'last'
+
+  //enum
+  //Enumerated types, often called enumerations or enums, are a special kind of
+  //class used to represent a fixed number of constant values.
+  
+  enum Color { red, green, blue };
+ 
 }
