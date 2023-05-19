@@ -336,4 +336,16 @@ void main() {
   final color = Color.green;
 
   print(color);
+
+  switch (color) {
+    case Color.red:
+      print("this color is red");
+      break;
+    case Color.blue:
+      print("this color is blue");
+      break;
+    case Color.green:
+      print("this color is green");
+      break;
+  }
 }
